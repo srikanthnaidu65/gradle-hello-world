@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'java-library'
+
+mainClassName = 'hello.HelloWorld'
+
+repositories { 
+    mavenCentral() 
+}
+
+jar {
+    archiveBaseName = 'gradle-hello-world'
+    archiveVersion =  '1.0'
+
+    manifest {
+        attributes 'Main-Class': 'hello.HelloWorld'
+    }
+}
+
+dependencies {
+    testImplementation "junit:junit:4.12"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
